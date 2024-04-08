@@ -6,7 +6,9 @@ const PostAuthor = ( {userId} ) => {
     const users = useSelector(selectAllUsers)
     const author = users.find(user => user.id === userId)
     return (
-            <span>by <Link to={`/user/${userId}`}>{author ? author.name: 'Unknown Author'}</Link></span>
+            <span>by {author 
+                ? <Link to={`/user/${userId}`}>{author.name}</Link>
+                : 'Unknown Author'}</span>
         )
 }
 
